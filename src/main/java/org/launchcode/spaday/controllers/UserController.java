@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("user")
 public class UserController {
 
-    @GetMapping("add")
+
+    @GetMapping("/add")
     public String displayAddUserForm(String username, String email, String password) {
         return "user/add";
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
         // add form submission handling code here
         if (verify == user.getPassword()) {
